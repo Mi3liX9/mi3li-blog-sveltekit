@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background-color: var(--tg-theme-bg-color, theme('colors.white'));
+		--text-color: var(--tg-theme-text-color, theme('colors.black'));
+		--link-color: var(--tg-theme-link-color, theme('colors.blue.500'));
+		--button-color: var(--tg-theme-button-color, theme('colors.blue.500'));
+		--button-text-color: var(--tg-theme-button-text-color, theme('colors.white'));
+		--hint-color: var(--tg-theme-hint-color, theme('colors.gray.500'));
+
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	.dark {
+		--background-color: var(--tg-theme-bg-color, theme('colors.gray.800'));
+		--text-color: var(--tg-theme-text-color, theme('colors.white'));
+		--link-color: var(--tg-theme-link-color, theme('colors.blue.500'));
+		--button-color: var(--tg-theme-button-color, theme('colors.blue.500'));
+		--button-text-color: var(--tg-theme-button-text-color, theme('colors.white'));
+		--hint-color: var(--tg-theme-hint-color, theme('colors.gray.500'));
+	}
+
+	body {
+		background: var(--background-color);
+		color: var(--text-color);
+	}
+	a {
+		color: var(--link-color);
+		text-decoration: underline;
+		@apply active:text-red-500;
+	}
+
+	button {
+		background: var(--button-color);
+		color: var(--button-text-color);
+		@apply px-4 py-2 rounded-md text-lg select-none;
+	}
+}
