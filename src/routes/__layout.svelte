@@ -14,12 +14,13 @@
 		if (window.Telegram.WebApp.initData && window.Telegram.WebApp.colorScheme === 'dark')
 			return document.documentElement.classList.add('dark');
 
-		// if (
-		// 	localStorage.theme === 'dark' ||
-		// 	(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-		// ) {
-		// 	return document.documentElement.classList.add('dark');
-		// }
+		if (
+			!window.Telegram.WebApp.initData &&
+			(localStorage.theme === 'dark' ||
+				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches))
+		) {
+			return document.documentElement.classList.add('dark');
+		}
 		return document.documentElement.classList.remove('dark');
 	}
 </script>
