@@ -6,17 +6,22 @@
 
 	onMount(() => {
 		window.Telegram.WebApp.ready();
+		changeTheme();
+	});
+
+	function changeTheme() {
+		// If telegram
+		if (window.Telegram.WebApp.initData && window.Telegram.WebApp.colorScheme === 'dark')
+			return document.documentElement.classList.add('dark');
 
 		if (
-			(window.Telegram.WebApp.initData && window.Telegram.WebApp.colorScheme === 'dark') ||
 			localStorage.theme === 'dark' ||
 			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
 		) {
-			document.documentElement.classList.add('dark');
-		} else {
-			document.documentElement.classList.remove('dark');
+			return document.documentElement.classList.add('dark');
 		}
-	});
+		return document.documentElement.classList.remove('dark');
+	}
 </script>
 
 <svelte:head>
