@@ -6,7 +6,7 @@
 
 	onMount(() => {
 		window.Telegram.WebApp.ready();
-		changeTheme();
+		// changeTheme();
 	});
 
 	function changeTheme() {
