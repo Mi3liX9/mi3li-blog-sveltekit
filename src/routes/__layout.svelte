@@ -6,6 +6,7 @@
 		window.Telegram.WebApp.ready();
 
 		if (
+			(window.Telegram.WebApp.initData && window.Telegram.WebApp.colorScheme === 'dark') ||
 			localStorage.theme === 'dark' ||
 			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
 		) {
