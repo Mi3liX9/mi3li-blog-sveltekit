@@ -26,16 +26,28 @@
 	body {
 		background: var(--background-color);
 		color: var(--text-color);
+		@apply prose dark:prose-invert container m-auto;
+	}
+	* {
+		outline: none;
 	}
 	a {
 		color: var(--link-color);
-		text-decoration: underline;
-		@apply active:text-red-500;
+		@apply rounded-md;
+		@apply focus:ring;
+	}
+
+	a:active {
+		color: var(--tg-theme-link-color, theme('colors.red.500'));
 	}
 
 	button {
 		background: var(--button-color);
 		color: var(--button-text-color);
-		@apply px-4 py-2 rounded-md text-lg select-none;
+		@apply px-2 py-1 rounded-md select-none active:scale-95 hover:filter hover:brightness-95 focus:ring active:ring;
+	}
+
+	pre {
+		direction: ltr;
 	}
 }

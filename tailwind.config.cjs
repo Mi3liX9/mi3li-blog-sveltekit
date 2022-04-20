@@ -8,10 +8,10 @@ module.exports = {
 					css: {
 						color: 'var(--text-color)',
 						a: {
-							color: 'var(--link-color)'
-							// '&:hover': {
-							// 	color: '#2c5282'
-							// }
+							color: 'var(--link-color)',
+							'&:hover': {
+								backgroundColor: 'var(--tg-hint-color, initial)'
+							}
 						}
 					}
 				}

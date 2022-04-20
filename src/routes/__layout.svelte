@@ -7,8 +7,7 @@
 
 		if (
 			localStorage.theme === 'dark' ||
-			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) ||
-			window.Telegram.WebApp.colorScheme === 'dark'
+			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
 		) {
 			document.documentElement.classList.add('dark');
 		} else {
