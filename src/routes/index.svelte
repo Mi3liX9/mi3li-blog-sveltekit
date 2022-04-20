@@ -34,6 +34,16 @@
 			createdAt: new Date()
 		}
 	];
+
+	function toggleTheme() {
+		if (document.documentElement.classList.contains('light')) {
+			document.documentElement.classList.add('dark');
+			document.documentElement.classList.remove('light');
+		} else {
+			document.documentElement.classList.add('light');
+			document.documentElement.classList.remove('dark');
+		}
+	}
 </script>
 
 <article dir="rtl" class="">
@@ -52,7 +62,7 @@
 			</div>
 		{/each}
 	</div>
-	<!-- <button>Hello</button> -->
+	<button class="my-2" on:click={toggleTheme}>Toggle Theme</button>
 
 	<pre>{JSON.stringify({ telegram, theme }, null, 2)}</pre>
 </article>

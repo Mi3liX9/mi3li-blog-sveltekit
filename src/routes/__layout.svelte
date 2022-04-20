@@ -5,6 +5,8 @@
 	import '../app.css';
 
 	onMount(() => {
+		window.Telegram.WebApp.ready();
+
 		if (
 			(window.Telegram.WebApp.initData && window.Telegram.WebApp.colorScheme === 'dark') ||
 			localStorage.theme === 'dark' ||
@@ -14,8 +16,6 @@
 		} else {
 			document.documentElement.classList.remove('dark');
 		}
-
-		window.Telegram.WebApp.ready();
 	});
 </script>
 
