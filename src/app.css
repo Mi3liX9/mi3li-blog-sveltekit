@@ -26,8 +26,10 @@
 	body {
 		background: var(--background-color);
 		color: var(--text-color);
-		@apply prose dark:prose-invert container m-auto;
+		font-family: 'El Messiri';
+		@apply prose dark:prose-invert container m-auto px-2 md:px-0;
 	}
+
 	* {
 		outline: none;
 	}
