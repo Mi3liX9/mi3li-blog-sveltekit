@@ -43,7 +43,7 @@
 	{/if}
 	<div class="flex flex-col gap-2">
 		{#each posts as post (post.id)}
-			<div class="flex gap-2 h-16 bg-primary p-2 not-prose select-none">
+			<div class="flex gap-2 h-16 bg-black/40 p-2 not-prose select-none">
 				<img src={post.pic} alt={post.title} class="h-full aspect-square rounded-md" />
 				<div class="flex-1">
 					<p>{post.title}</p>

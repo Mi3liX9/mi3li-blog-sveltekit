@@ -4,7 +4,6 @@
 
 @layer base {
 	:root {
-		--primary-color: var(--tg-theme-button-color, theme('colors.gray.200'));
 		--background-color: var(--tg-theme-bg-color, theme('colors.white'));
 		--text-color: var(--tg-theme-text-color, theme('colors.black'));
 		--link-color: var(--tg-theme-link-color, theme('colors.blue.500'));
@@ -16,7 +15,6 @@
 	}
 
 	.dark {
-		--primary-color: var(--tg-theme-button-color, theme('colors.gray.900'));
 		--background-color: var(--tg-theme-bg-color, theme('colors.gray.800'));
 		--text-color: var(--tg-theme-text-color, theme('colors.white'));
 		--link-color: var(--tg-theme-link-color, theme('colors.blue.500'));
