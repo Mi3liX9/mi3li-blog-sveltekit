@@ -25,7 +25,7 @@
 	});
 </script>
 
-<div class="flex flex-col py-2">
+<div class="flex flex-col gap-2 py-2">
 	<div>
 		<h2>مرحبًا بك في مايتي بلوق</h2>
 		<p>
@@ -74,4 +74,5 @@
 			/>
 		{/each}
 	</div>
+	<button>لا تضغط على هذا الزر لأنه لا يعمل</button>
 </div>
