@@ -14,10 +14,15 @@
 <script lang="ts">
 	import type { PostProps } from 'src/utils/posts';
 	import PostPreview from '../components/postPreview.svelte';
+	import { onMount } from 'svelte';
 	export let posts: { metadata: PostProps }[];
 
-	const isTelegram = window.Telegram.WebApp.initData;
-	const tgApp = window.Telegram.WebApp;
+	let isTelegram: boolean;
+	let tgApp: TelegramWebApp;
+	onMount(() => {
+		isTelegram = !!window.Telegram.WebApp.initData;
+		tgApp = window.Telegram.WebApp;
+	});
 </script>
 
 <div class="flex flex-col py-2">
