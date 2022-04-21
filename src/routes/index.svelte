@@ -1,5 +1,5 @@
 <script context="module">
-	import { getPosts } from 'src/utils/posts';
+	import { getPosts } from '../utils/posts';
 
 	export async function load() {
 		const posts = getPosts();
