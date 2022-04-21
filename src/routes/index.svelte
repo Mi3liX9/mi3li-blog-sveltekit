@@ -53,6 +53,7 @@
 				</li>
 				<li>
 					اسم المستخدم الخاص بك هو <a
+						dir="ltr"
 						target="_blanck"
 						href={'https://t.me/' + tgApp.initDataUnsafe.user.username}
 						>@{tgApp.initDataUnsafe.user.username}</a

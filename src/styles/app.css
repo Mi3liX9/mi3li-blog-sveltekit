@@ -53,6 +53,11 @@
 	pre {
 		direction: ltr;
 	}
+
+	ul,
+	ol {
+		margin-inline-start: theme('spacing.7');
+	}
 }
 @layer components {
 	.link,
