@@ -1,33 +1,71 @@
-<script lang="ts">
-	import PostPreview from '../components/postPreview.svelte';
-	import { onMount } from 'svelte';
+<script context="module">
+	import { getPosts } from 'src/utils/posts';
 
-	let telegram: TelegramWebApp;
-	let theme: 'light' | 'dark';
-	onMount(() => {
-		telegram = window.Telegram.WebApp;
-		theme = document.documentElement.className as 'light' | 'dark';
-	});
-
-	const posts = [
-		{
-			id: 1,
-			title: 'منشور رقم 1',
-			slug: 'post-1',
-			pic: 'https://picsum.photos/id/1/200/200',
-			createdAt: new Date()
-		}
-	];
+	export async function load() {
+		const posts = getPosts();
+		return {
+			props: {
+				posts
+			}
+		};
+	}
 </script>
 
-<article dir="rtl" class="py-2">
-	<h1>مرحبًا بك في مايتي بلوق</h1>
-	{#if telegram?.initData}
-		<p>حياك الله {telegram.initDataUnsafe.user.first_name}</p>
-	{/if}
+<script lang="ts">
+	import type { PostProps } from 'src/utils/posts';
+	import PostPreview from '../components/postPreview.svelte';
+	export let posts: { metadata: PostProps }[];
+
+	const isTelegram = window.Telegram.WebApp.initData;
+	const tgApp = window.Telegram.WebApp;
+</script>
+
+<div class="flex flex-col py-2">
+	<div>
+		<h2>مرحبًا بك في مايتي بلوق</h2>
+		<p>
+			تم صناعة تطبيق الويب هذا لتجربة بوتات الويب في تيليجرام وامكانياتها الهائلة. كما المتوقع في
+			هذه الصفحة ان يتم اضافة تقييمات وتجارب المنتجات اكثر من كتابة الاخبار وغيرها.
+		</p>
+
+		<p>
+			من امكانيات بوتات الويب هي التعرف على الثيم الخاص بك، كما يمكنه التعرف على اسمك واسم المستخدم
+			الخاص بك.
+
+			{#if isTelegram}
+				فعلى سبيل المثال:
+			{:else}
+				جرب أن
+				<a href="https://t.me/mi3li_blog_bot">تفتح الصفحة عن طريق تيليجرام</a>
+				وتأكد أن يكون لديك أخر اصدار.
+			{/if}
+		</p>
+		{#if isTelegram}
+			<ul>
+				<li>
+					اسمك هو: {tgApp.initDataUnsafe.user.first_name}
+					{tgApp.initDataUnsafe.user.last_name}
+				</li>
+				<li>
+					اسم المستخدم الخاص بك هو <a
+						target="_blanck"
+						href={'https://t.me/' + tgApp.initDataUnsafe.user.username}
+						>@{tgApp.initDataUnsafe.user.username}</a
+					>
+				</li>
+				<li>الثيم الخاص بك هو {tgApp.colorScheme}</li>
+			</ul>
+		{/if}
+	</div>
+	<h2>آخر المنشورات (تجريبي)</h2>
 	<div class="flex flex-col gap-2">
-		{#each posts as post (post.id)}
-			<PostPreview title={post.title} pic={post.pic} createdAt={post.createdAt} slug={post.slug} />
+		{#each posts as post (post.metadata.slug)}
+			<PostPreview
+				title={post.metadata.title}
+				pic={post.metadata.image}
+				date={post.metadata.date}
+				slug={post.metadata.slug}
+			/>
 		{/each}
 	</div>
-</article>
+</div>

@@ -16,7 +16,18 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		vite: {
+			resolve: {
+				alias: {
+					src: './src',
+					components: './src/components',
+					layouts: './src/layouts',
+					routes: './src/routes',
+					utils: './src/utils'
+				}
+			}
+		}
 	}
 };
 

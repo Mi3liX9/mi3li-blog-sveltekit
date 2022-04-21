@@ -26,7 +26,7 @@
 	body {
 		background: var(--background-color);
 		color: var(--text-color);
-		font-family: 'El Messiri';
+		font-family: 'Noto Sans Arabic', 'Readex Pro';
 		direction: rtl;
 		@apply prose dark:prose-invert container m-auto px-2 md:px-0;
 	}
