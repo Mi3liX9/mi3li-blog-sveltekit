@@ -3,9 +3,7 @@ module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
-			colors: {
-				primary: 'var(--primary-color)'
-			},
+			colors: {},
 			typography: {
 				DEFAULT: {
 					css: {

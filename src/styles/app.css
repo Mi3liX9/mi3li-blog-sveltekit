@@ -27,6 +27,7 @@
 		background: var(--background-color);
 		color: var(--text-color);
 		font-family: 'El Messiri';
+		direction: rtl;
 		@apply prose dark:prose-invert container m-auto px-2 md:px-0;
 	}
 
@@ -51,5 +52,13 @@
 
 	pre {
 		direction: ltr;
+	}
+}
+@layer components {
+	.link,
+	.link:hover,
+	.link:active {
+		color: var(--text-color);
+		@apply no-underline;
 	}
 }

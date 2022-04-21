@@ -2,8 +2,8 @@
 	// @ts-nocheck
 
 	import { onMount } from 'svelte';
-	import '../app.css';
-
+	import '../styles/app.css';
+	import prismjs from '../styles/prismjs.css';
 	onMount(() => {
 		window.Telegram.WebApp.ready();
 		changeTheme();
@@ -32,6 +32,7 @@
 		href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap"
 		rel="stylesheet"
 	/>
+	<link href={prismjs} rel="stylesheet" />
 </svelte:head>
 
 <slot />
