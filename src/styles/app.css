@@ -9,7 +9,7 @@
 		--link-color: var(--tg-theme-link-color, theme('colors.blue.500'));
 		--button-color: var(--tg-theme-button-color, theme('colors.blue.500'));
 		--button-text-color: var(--tg-theme-button-text-color, theme('colors.white'));
-		--hint-color: var(--tg-theme-hint-color, theme('colors.gray.500'));
+		--hint-color: var(--tg-theme-hint-color, theme('colors.blue.300'));
 
 		-webkit-tap-highlight-color: transparent;
 	}
@@ -20,7 +20,7 @@
 		--link-color: var(--tg-theme-link-color, theme('colors.blue.500'));
 		--button-color: var(--tg-theme-button-color, theme('colors.blue.500'));
 		--button-text-color: var(--tg-theme-button-text-color, theme('colors.white'));
-		--hint-color: var(--tg-theme-hint-color, theme('colors.gray.500'));
+		--hint-color: var(--tg-theme-hint-color, theme('colors.blue.900'));
 	}
 
 	body {
@@ -33,6 +33,11 @@
 
 	* {
 		outline: none;
+	}
+
+	*::selection {
+		background: var(--hint-color);
+		color: var(--text-color);
 	}
 	a {
 		color: var(--link-color);
