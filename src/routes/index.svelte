@@ -1,4 +1,5 @@
 <script lang="ts">
+	import PostPreview from 'src/components/postPreview.svelte';
 	import { onMount } from 'svelte';
 
 	let telegram: TelegramWebApp;
@@ -34,16 +35,6 @@
 			createdAt: new Date()
 		}
 	];
-
-	function toggleTheme() {
-		if (document.documentElement.classList.contains('light')) {
-			document.documentElement.classList.add('dark');
-			document.documentElement.classList.remove('light');
-		} else {
-			document.documentElement.classList.add('light');
-			document.documentElement.classList.remove('dark');
-		}
-	}
 </script>
 
 <article dir="rtl" class="">
@@ -53,16 +44,7 @@
 	{/if}
 	<div class="flex flex-col gap-2">
 		{#each posts as post (post.id)}
-			<div class="flex gap-2 h-16 bg-gray-200 dark:bg-black/40 p-2 not-prose select-none">
-				<img src={post.pic} alt={post.title} class="h-full aspect-square rounded-md" />
-				<div class="flex-1">
-					<p>{post.title}</p>
-					<p class="text-sm ">{post.createdAt.toLocaleString()}</p>
-				</div>
-			</div>
+			<PostPreview title={post.title} pic={post.pic} createdAt={post.createdAt} />
 		{/each}
 	</div>
-	<button class="my-2" on:click={toggleTheme}>Toggle Theme</button>
-
-	<pre>{JSON.stringify({ telegram, theme }, null, 2)}</pre>
 </article>

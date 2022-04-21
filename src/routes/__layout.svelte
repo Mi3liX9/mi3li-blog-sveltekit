@@ -10,7 +10,6 @@
 	});
 
 	function changeTheme() {
-		// If telegram
 		if (window.Telegram.WebApp.initData && window.Telegram.WebApp.colorScheme === 'dark')
 			return document.documentElement.classList.add('dark');
 
