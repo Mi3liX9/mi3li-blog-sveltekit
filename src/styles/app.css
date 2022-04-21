@@ -20,7 +20,7 @@
 		--link-color: var(--tg-theme-link-color, theme('colors.blue.500'));
 		--button-color: var(--tg-theme-button-color, theme('colors.blue.500'));
 		--button-text-color: var(--tg-theme-button-text-color, theme('colors.white'));
-		--hint-color: var(--tg-theme-hint-color, theme('colors.blue.900'));
+		--hint-color: theme('colors.blue.900');
 	}
 
 	body {
