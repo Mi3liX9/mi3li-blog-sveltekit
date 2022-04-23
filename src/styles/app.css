@@ -28,6 +28,8 @@
 		color: var(--text-color);
 		font-family: 'Noto Sans Arabic', 'Readex Pro';
 		direction: rtl;
+		word-wrap: break-word;
+
 		@apply prose dark:prose-invert container m-auto px-2 md:px-0;
 	}
 
