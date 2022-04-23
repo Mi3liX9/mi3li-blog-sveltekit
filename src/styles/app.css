@@ -53,7 +53,7 @@
 	button {
 		background: var(--button-color);
 		color: var(--button-text-color);
-		@apply px-2 py-1 rounded-md select-none active:scale-95 hover:filter hover:brightness-95 focus:ring active:ring;
+		@apply px-2 py-1 rounded-md select-none active:scale-95 hover:filter hover:brightness-95 focus:ring active:ring ring-primary;
 	}
 
 	pre {
