@@ -23,6 +23,12 @@
 		isTelegram = !!window.Telegram.WebApp.initData;
 		tgApp = window.Telegram.WebApp;
 	});
+
+	function sendData() {
+		tgApp.sendData({
+			message: 'Hello'
+		});
+	}
 </script>
 
 <div class="flex flex-col gap-2 py-2">
@@ -60,12 +66,12 @@
 					>
 				</li>
 				<li>الثيم الخاص بك هو {tgApp.colorScheme}</li>
-				<li>
+				<!-- <li>
 					<img
 						src={tgApp.initDataUnsafe.user.photo_url}
 						alt={tgApp.initDataUnsafe.user.first_name}
 					/>
-				</li>
+				</li> -->
 			</ul>
 		{/if}
 	</div>
@@ -80,5 +86,5 @@
 			/>
 		{/each}
 	</div>
-	<button>لا تضغط على هذا الزر لأنه لا يعمل</button>
+	<button on:click={sendData}>سيعمل هذا الزر إذا فتحت الصفحة عن طريق زر كيبورد</button>
 </div>
