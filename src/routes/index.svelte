@@ -25,9 +25,7 @@
 	});
 
 	function sendData() {
-		tgApp.sendData({
-			data: 'Hello'
-		});
+		window.Telegram.WebApp.sendData('hello');
 	}
 </script>
 
