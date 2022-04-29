@@ -25,7 +25,7 @@
 	});
 
 	function sendData() {
-		window.Telegram.WebApp.sendData('hello');
+		window.Telegram.WebApp.sendData(JSON.stringify({ posts }));
 	}
 </script>
 
