@@ -60,6 +60,12 @@
 					>
 				</li>
 				<li>الثيم الخاص بك هو {tgApp.colorScheme}</li>
+				<li>
+					<img
+						src={tgApp.initDataUnsafe.user.photo_url}
+						alt={tgApp.initDataUnsafe.user.first_name}
+					/>
+				</li>
 			</ul>
 		{/if}
 	</div>
