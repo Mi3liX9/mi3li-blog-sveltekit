@@ -26,7 +26,7 @@
 
 	function sendData() {
 		tgApp.sendData({
-			text: 'Hello'
+			data: 'Hello'
 		});
 	}
 </script>
